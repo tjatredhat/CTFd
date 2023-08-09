@@ -21,7 +21,7 @@ if url.drivername.startswith("sqlite"):
 url = url._replace(database=None)
 
 # Wait for the database server to be available
-engine = create_engine(url, poolclass=pool.NullPool)
+engine = create_engine(url, convert_unicode=True, connect_args=dict(use_unicode=True), poolclass=pool.NullPool)
 print(f"Waiting for {url.host} to be ready")
 while True:
     try:
