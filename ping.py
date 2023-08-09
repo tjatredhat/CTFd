@@ -26,7 +26,8 @@ while True:
     try:
         engine.raw_connection()
         break
-    except Exception:
+    except Exception as e:
+        print(f". (Error: {e})", end="", flush=True)
         print(".", end="", flush=True)
         time.sleep(1)
 
