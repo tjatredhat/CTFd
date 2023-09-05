@@ -160,7 +160,7 @@ def require_team(f):
     return require_team_wrapper
 
 
-def ratelimit(method="POST", limit=1000, interval=60, key_prefix="rl"):
+def ratelimit(method="POST", limit=1000, interval=1, key_prefix="rl"):
     def ratelimit_decorator(f):
         @functools.wraps(f)
         def ratelimit_function(*args, **kwargs):
