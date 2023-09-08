@@ -127,6 +127,8 @@ class UserSchema(ma.ModelSchema):
                             "Email address has already been used", field_names=["email"]
                         )
         else:
+            return data
+            """
             if email == current_user.email:
                 return data
             else:
@@ -156,6 +158,7 @@ class UserSchema(ma.ModelSchema):
                     )
                 if get_config("verify_emails"):
                     current_user.verified = False
+            """
 
     @pre_load
     def validate_password_confirmation(self, data):
