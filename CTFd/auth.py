@@ -377,7 +377,7 @@ def register():
 
 
 @auth.route("/login", methods=["POST", "GET"])
-@ratelimit(method="POST", limit=10, interval=5)
+@ratelimit(method="POST", limit=10000, interval=5)
 def login():
     errors = get_errors()
     if request.method == "POST":
